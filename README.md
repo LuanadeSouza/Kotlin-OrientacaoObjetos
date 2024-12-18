@@ -57,7 +57,7 @@ A classe `Conta` representa uma conta bancária e encapsula as operações poss�
 
 ---
 
-## 🔍 Neste App são exploradas as seguintes técnicas e tecnologias:
+## 🔍 Neste Proe=jeto são exploradas as seguintes técnicas e tecnologias:
 
 - **Função main()**: inicia o programa
 - **Variáveis mutáveis e imutáveis**: armazenar valores que podem ou não ser modificados
