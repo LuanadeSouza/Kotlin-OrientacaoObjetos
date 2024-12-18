@@ -58,14 +58,14 @@ fun main() {
     println(contaAlex.saldo)
     println(contaFran.saldo)
 }
-Classe Conta
-A classe Conta encapsula o estado e o comportamento de uma conta bancária.
-Ela demonstra:
 
-Encapsulamento com uso de private set para restringir alterações diretas no saldo.
-Métodos que alteram o estado da conta com validações de regras de negócio.
-kotlin
-Copy code
+//Classe Conta
+//A classe Conta encapsula o estado e o comportamento de uma conta bancária.
+//Ela demonstra:
+//Encapsulamento com uso de private set para restringir alterações diretas no saldo.
+//Métodos que alteram o estado da conta com validações de regras de negócio.
+
+
 class Conta(
     var titular: String, // Nome do titular da conta
     val numero: Int      // Número único da conta
@@ -97,11 +97,10 @@ class Conta(
         return false
     }
 }
-Função testaCopiasEReferencias
-Demonstra a diferença entre cópias de valores primitivos e referências de objetos.
 
-kotlin
-Copy code
+//Função testaCopiasEReferencias
+//Demonstra a diferença entre cópias de valores primitivos e referências de objetos.
+
 fun testaCopiasEReferencias() {
     val numeroX = 10
     var numeroY = numeroX
@@ -118,11 +117,10 @@ fun testaCopiasEReferencias() {
     println("titular conta joao: ${contaJoao.titular}")
     println("titular conta maria: ${contaMaria.titular}")
 }
-Função testaLacos
-Explora laços de repetição (while e for) para criar objetos dinamicamente.
 
-kotlin
-Copy code
+//Função testaLacos
+//Explora laços de repetição (while e for) para criar objetos dinamicamente.
+
 fun testaLacos() {
     // Usando `while` para criar contas numeradas
     var i = 0
@@ -150,11 +148,10 @@ fun testaLacos() {
         println()
     }
 }
-Função testaCondicoes
-Demonstra controle condicional usando if-else e when.
 
-kotlin
-Copy code
+//Função testaCondicoes
+//Demonstra controle condicional usando if-else e when.
+
 fun testaCondicoes(saldo: Double) {
     // Usando `if-else`
     if (saldo > 0.0) {
@@ -172,6 +169,7 @@ fun testaCondicoes(saldo: Double) {
         else -> println("conta é negativa")
     }
 }
+
 Por que foi feito assim?
 Encapsulamento: Protege o estado interno da classe e expõe apenas métodos seguros para manipulação do saldo.
 Validação nos métodos: Evita inconsistências, como depósitos negativos ou saques maiores que o saldo.
