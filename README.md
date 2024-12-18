@@ -57,6 +57,25 @@ A classe `Conta` representa uma conta bancária e encapsula as operações poss�
 
 ---
 
+## 🔍 Neste App são exploradas as seguintes técnicas e tecnologias:
+
+- **Função main()**: inicia o programa
+- **Variáveis mutáveis e imutáveis**: armazenar valores que podem ou não ser modificados
+- **Operações aritméticas**: soma, subtração, multiplicação e divisão
+- **Auto incremento**: adição incremental na mesma variável
+- **Strings e String template**: utilização de texto e concatenação de texto com variáveis ou funções
+- **Estrutura condicional**: if e when
+- **Estrutura de repetição ou laços**: while e for loop
+- **Implementação de classes**: definição de conta
+- **Criação de objetos**: instâncias para criar novas contas
+- **Construtores**: definição de como criar objetos
+- **Properties**: mecanismo para acessar campos/atributos das classes
+- **Métodos**: comportamentos da classe
+- **Parâmetros nomeados**: envio de argumentos específicos para construtores, métodos ou funções
+- **Métodos de acesso**: restrição de acesso de membros de classe
+
+---
+
 ## 💻 Como Executar
 
 ### Pré-requisitos
@@ -84,7 +103,7 @@ A classe `Conta` representa uma conta bancária e encapsula as operações poss�
 
 ## 🧑‍💻 Autor
 
-Desenvolvido por **Luana Dev** como parte dos estudos do curso **Kotlin: Orientação a Objetos**.
+Desenvolvido por **Luana Souza** como parte dos estudos do curso **Kotlin: Orientação a Objetos**.
 
 ---
 
