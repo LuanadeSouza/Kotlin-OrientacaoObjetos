@@ -1,6 +1,6 @@
 # Bytebank - Projeto de Estudo em Orientação a Objetos com Kotlin
 
-Este é um projeto de estudo desenvolvido para explorar os conceitos de **Orientação a Objetos (OOP)** utilizando a linguagem **Kotlin**. Durante o desenvolvimento, aplicamos princípios fundamentais da programação orientada a objetos, como encapsulamento, abstração e composição, por meio de simulações de operações bancárias.
+Este é um projeto de estudo desenvolvido para explorar os conceitos de **Orientação a Objetos (POO)** utilizando a linguagem **Kotlin**. Durante o desenvolvimento, aplicamos princípios fundamentais da programação orientada a objetos, como encapsulamento, abstração e composição, por meio de simulações de operações bancárias.
 
 ---
 
@@ -32,19 +32,32 @@ Este é um projeto de estudo desenvolvido para explorar os conceitos de **Orient
 
 ### 1. **Classe Conta**
 A classe `Conta` representa uma conta bancária e encapsula as operações possíveis:
-- `deposita`: Adiciona um valor ao saldo, se for positivo.
-- `saca`: Retira um valor do saldo, se houver saldo suficiente.
-- `transfere`: Transfere um valor para outra conta, se o saldo for suficiente.
+- **`deposita`**: Adiciona um valor ao saldo, se for positivo.
+- **`saca`**: Retira um valor do saldo, se houver saldo suficiente.
+- **`transfere`**: Transfere um valor para outra conta, se o saldo for suficiente.
 
-### 2. **Funções de Teste**
+### 2. **Classes de Funcionários**
+- **`Funcionario`**: Classe abstrata base que define os atributos e métodos comuns a todos os funcionários.
+- **`Gerente` e `Diretor`**: Funcionários administrativos que implementam bonificações específicas e autenticação por senha.
+- **`Analista` e `Auxiliar`**: Funcionários operacionais com cálculo de bonificação proporcional ao salário.
 
-- **`main`**: Ponto de entrada do projeto. Realiza as operações principais e simula cenários com instâncias de `Conta`.
+### 3. **Interfaces**
+- **`Autenticavel`**: Interface para implementar autenticação em diferentes classes, como `Cliente` e `FuncionarioAdmin`.
+
+### 4. **Funções de Teste**
+- **`main`**: Ponto de entrada do projeto. Realiza operações principais e simula cenários.
+- **`testaComportamentosConta`**: Testa operações de depósito, saque e transferência entre contas.
+- **`testaContasDiferentes`**: Demonstra o comportamento de contas correntes e poupança.
+- **`testaFuncionarios`**: Simula a criação e bonificação de diferentes tipos de funcionários.
+- **`testaAutenticacao`**: Valida o processo de autenticação para gerentes, diretores e clientes.
 - **`testaCopiasEReferencias`**: Demonstra a diferença entre cópias de valores e referências de objetos.
 - **`testaLacos`**: Utiliza laços `while` e `for` para criar e exibir várias contas fictícias.
 - **`testaCondicoes`**: Avalia o estado do saldo de uma conta usando estruturas condicionais `if` e `when`.
 
-### 3. **Funções Auxiliares**
-- Métodos encapsulados na classe `Conta` para proteger os dados sensíveis e validar as operações.
+### 5. **Classes Auxiliares**
+- **`CalculadoraBonificacao`**: Calcula e mantém o total de bonificações dos funcionários.
+- **`SistemaInterno`**: Gerencia autenticação de usuários com base na interface `Autenticavel`.
+- **`ContaCorrente` e `ContaPoupanca`**: Extensões da classe `Conta` que definem comportamentos específicos para saques.
 
 ---
 
@@ -57,22 +70,25 @@ A classe `Conta` representa uma conta bancária e encapsula as operações poss�
 
 ---
 
-## 🔍 Neste Proe=jeto são exploradas as seguintes técnicas e tecnologias:
+## 🔍 Neste Projeto são exploradas as seguintes técnicas e tecnologias:
 
-- **Função main()**: inicia o programa
-- **Variáveis mutáveis e imutáveis**: armazenar valores que podem ou não ser modificados
-- **Operações aritméticas**: soma, subtração, multiplicação e divisão
-- **Auto incremento**: adição incremental na mesma variável
-- **Strings e String template**: utilização de texto e concatenação de texto com variáveis ou funções
-- **Estrutura condicional**: if e when
-- **Estrutura de repetição ou laços**: while e for loop
-- **Implementação de classes**: definição de conta
-- **Criação de objetos**: instâncias para criar novas contas
-- **Construtores**: definição de como criar objetos
-- **Properties**: mecanismo para acessar campos/atributos das classes
-- **Métodos**: comportamentos da classe
-- **Parâmetros nomeados**: envio de argumentos específicos para construtores, métodos ou funções
-- **Métodos de acesso**: restrição de acesso de membros de classe
+- **Função main()**: Inicia o programa e executa os testes principais.
+- **Variáveis mutáveis e imutáveis**: Armazenam valores que podem ou não ser modificados.
+- **Operações aritméticas**: Soma, subtração, multiplicação e divisão em cálculos financeiros.
+- **Auto incremento**: Incrementa valores dentro de laços ou cálculos.
+- **Strings e String template**: Utilização de textos e concatenação com variáveis ou funções.
+- **Estrutura condicional**: Uso de `if`, `else` e `when` para decisões lógicas.
+- **Estrutura de repetição ou laços**: Implementação de `while` e `for` para iterações.
+- **Implementação de classes**: Definição de estruturas como contas e funcionários.
+- **Criação de objetos**: Instanciação de classes para criar novas entidades.
+- **Construtores**: Definição de como inicializar objetos com propriedades específicas.
+- **Properties**: Mecanismo para acessar e modificar atributos das classes.
+- **Métodos**: Implementação de comportamentos associados às classes.
+- **Parâmetros nomeados**: Passagem clara e específica de argumentos para métodos e construtores.
+- **Herança e polimorfismo**: Criação de hierarquias entre classes e sobrescrita de métodos.
+- **Interfaces**: Definição de contratos de comportamento reutilizáveis entre classes.
+- **Encapsulamento**: Restrição de acesso direto a propriedades sensíveis, como saldo e senha.
+- **Métodos de acesso**: Controle de visibilidade e manipulação de membros de classe, como `private`, `protected` e `public`.
 
 ---
 
@@ -89,15 +105,6 @@ A classe `Conta` representa uma conta bancária e encapsula as operações poss�
    ```
 2. Abra o projeto no IntelliJ IDEA.
 3. Execute a função `main` na classe principal.
-
----
-
-## 🔮 Melhorias Futuras
-
-- Adicionar uma interface gráfica para interagir com as operações bancárias.
-- Criar mais cenários de teste automatizado.
-- Implementar novos tipos de contas, como contas poupança e contas correntes.
-- Introduzir relatórios financeiros e exportação de dados.
 
 ---
 
