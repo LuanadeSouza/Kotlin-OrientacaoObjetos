@@ -1,9 +1,22 @@
 abstract class Conta(
-    var titular: String,
+    var titular: Cliente,
     val numero: Int
-) {
+) : Autenticavel {
     var saldo = 0.0
         protected set
+
+    companion object {
+        var total = 0
+            private set
+    }
+
+    init {
+        total++
+    }
+
+    override fun autentica(senha: Int): Boolean {
+        return titular.autentica(senha)
+    }
 
     fun deposita(valor: Double) {
         if (valor > 0) {
@@ -13,12 +26,46 @@ abstract class Conta(
 
     abstract fun saca(valor: Double)
 
-    fun transfere(valor: Double, destino: Conta): Boolean {
-        if (saldo >= valor) {
-            saldo -= valor
-            destino.deposita(valor)
-            return true
+    fun transfere(valor: Double, destino: Conta, senha: Int) {
+        if (saldo < valor) {
+            throw SaldoInsuficienteException(
+                mensagem = "O saldo é insuficiente, saldo atual: $saldo, valor a ser subtraído $valor"
+            )
         }
-        return false
+        if (!autentica(senha)){
+            throw FalhaAutenticacaoException()
+        }
+//        throw NumberFormatException()
+        saldo -= valor
+        destino.deposita(valor)
+    }
+}
+
+class ContaCorrente(
+    titular: Cliente,
+    numero: Int
+) : Conta(
+    titular = titular,
+    numero = numero
+) {
+    override fun saca(valor: Double) {
+        val valorComTaxa = valor + 0.1
+        if (this.saldo >= valorComTaxa) {
+            this.saldo -= valorComTaxa
+        }
+    }
+}
+
+class ContaPoupanca(
+    titular: Cliente,
+    numero: Int
+) : Conta(
+    titular = titular,
+    numero = numero
+) {
+    override fun saca(valor: Double) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+        }
     }
 }
